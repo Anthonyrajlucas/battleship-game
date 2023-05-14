@@ -5,6 +5,11 @@ def create_battleship_board(rows, cols):
         board.append(["O"] * cols)
     return board
 
+# Function to print the game board
+def print_battleship_board(board):
+    for row in board:
+        print(" ".join(row))    
+
 
 
 
