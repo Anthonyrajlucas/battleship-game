@@ -5,6 +5,9 @@ def create_battleship_board(rows, cols):
         board.append(["O"] * cols)
     return board
 
+
+
+
 # Function to randomly place the battleships on the board
 def place_ships_on_the_board(board, num_ships):
     ships_placed = 0
@@ -14,3 +17,15 @@ def place_ships_on_the_board(board, num_ships):
         if board[row][col] != "S":
             board[row][col] = "S"
             ships_placed += 1    
+
+
+
+# Function to get the user's guess
+def get_guess_from_player(rows, cols):
+    while True:
+        guess_row = int(input("Guess Row: ")) - 1
+        guess_col = int(input("Guess Col: ")) - 1
+        if is_on_board(guess_row, guess_col, rows, cols):
+            return guess_row, guess_col
+        else:
+            print("Oops, that's not even in the ocean.")
