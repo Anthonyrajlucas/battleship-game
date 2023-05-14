@@ -43,4 +43,11 @@ def get_guess_from_player(rows, cols):
 
 # Set the grid size
 rows = int(input("Enter the number of rows: "))
-cols = int(input("Enter the number of columns: "))            
+cols = int(input("Enter the number of columns: "))  
+
+# Create the game board and place the battleships
+board = create_battleship_board(rows, cols)
+num_ships = min(rows, cols) // 2
+place_ships_on_the_board(board, num_ships)
+
+
