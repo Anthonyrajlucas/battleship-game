@@ -1,3 +1,5 @@
+import random
+
 # Function to create the game board
 def create_battleship_board(rows, cols):
     board = []
@@ -38,3 +40,7 @@ def get_guess_from_player(rows, cols):
             return guess_row, guess_col
         else:
             print("Oops, that's not even in the ocean.")
+
+# Set the grid size
+rows = int(input("Enter the number of rows: "))
+cols = int(input("Enter the number of columns: "))            
