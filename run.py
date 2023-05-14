@@ -51,3 +51,32 @@ num_ships = min(rows, cols) // 2
 place_ships_on_the_board(board, num_ships)
 
 
+# Play the game
+turns = num_ships * 2
+print("Let's play Battleships!")
+for turn in range(turns):
+    print("Turn", turn + 1)
+    print_battleship_board(board)
+    guess_row, guess_col = get_guess_from_player(rows, cols)
+
+    if board[guess_row][guess_col] == "S":
+        print("Congratulations! You sank my battleship!")
+        board[guess_row][guess_col] = "X"
+    elif board[guess_row][guess_col] == "X":
+        print("You guessed that one already.")
+    else:
+        print("You missed my battleship!")
+        board[guess_row][guess_col] = "X"
+
+    if turn == turns - 1:
+        print("Game Over")
+        print_battleship_board(board)
+        break
+
+    computer_row = random.randint(0, rows - 1)
+    computer_col = random.randint(0, cols - 1)
+    if board[comp_row][comp_col] == "S":
+        print("Oh no! The computer sank one of your battleships!")
+        board[comp_row][comp_col] = "X"
+    else:
+        print("Phew! The computer missed your battleship!")
