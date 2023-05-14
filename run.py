@@ -11,8 +11,6 @@ def print_battleship_board(board):
         print(" ".join(row))    
 
 
-
-
 # Function to randomly place the battleships on the board
 def place_ships_on_the_board(board, num_ships):
     ships_placed = 0
@@ -22,6 +20,12 @@ def place_ships_on_the_board(board, num_ships):
         if board[row][col] != "S":
             board[row][col] = "S"
             ships_placed += 1    
+
+
+# Function to check if a guess is on the board
+def is_on_board(guess_row, guess_col, rows, cols):
+    return guess_row >= 0 and guess_row < rows and \
+           guess_col >= 0 and guess_col < cols
 
 
 
