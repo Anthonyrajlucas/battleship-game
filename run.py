@@ -75,8 +75,8 @@ for turn in range(turns):
 
     computer_row = random.randint(0, rows - 1)
     computer_col = random.randint(0, cols - 1)
-    if board[comp_row][comp_col] == "S":
+    if board[computer_row][computer_col] == "S":
         print("Oh no! The computer sank one of your battleships!")
-        board[comp_row][comp_col] = "X"
+        board[computer_row][computer_col] = "X"
     else:
         print("Phew! The computer missed your battleship!")
