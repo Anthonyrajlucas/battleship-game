@@ -14,10 +14,20 @@
 
 1. Run the code in a Python environment.
 2. Enter the number of rows for the game board when prompted.
+![number of rows](documentation/step-1.jpg)
+
 3. Enter the number of columns for the game board when prompted.
+![number of columns](documentation/step-2.jpg)
+
 4. Enter the number of ships you want to play with when prompted.
+![number of ships](documentation/step-3.jpg)
+
 5. For each ship, enter the width of the ship when prompted.
+![enter width of the ship](documentation/step-4.jpg)
+
 6. The game board will be displayed with ships randomly placed on it.
+![randomly placed ships on the board](documentation/place_ships_on_the_board.jpg)
+
 7. The game begins, and you and the computer take turns guessing the locations of each other's battleships.
 8. When it's your turn, enter the row and column you want to guess.
 9. If your guess hits an opponent's battleship, you will be notified, and the battleship will be marked as sunk on the game board.
@@ -33,16 +43,20 @@ Have fun playing Battleships!
 ## Existing Features
 
 - Creating the game board: The create_battleship_board function creates a game board with the specified number of rows and columns.
+![creade battleship board](documentation/create_battleship_board.jpg)
 
 - Printing the game board: The print_battleship_board function displays the current state of the game board.
 
 - Placing battleships on the board: The place_ships_on_the_board function randomly places battleships on the game board based on the specified number of ships and their widths.
+![place ship on the board randomly](documentation/place_ships_on_the_board.jpg)
 
 - Checking if a guess is on the board: The is_on_board function checks if the user's guess is within the boundaries of the game board.
+![check user guess is within the boundaries](documentation/is_on_board%20.jpg)
 
 - Getting the user's guess: The get_guess_from_player function prompts the user to enter their guess for the row and column.
 
 - Playing the game: The code implements the main game loop where the player and the computer take turns guessing the locations of the battleships. The result of each guess is displayed, and the game ends when all ships have been sunk or the maximum number of turns is reached.
+![game over](documentation/game_over.jpg)
 
 Overall, the code allows users to play a basic version of the Battleships game against the computer.
 
@@ -87,6 +101,8 @@ I have manually tested this project by doing the following:
 -  Observe the output, which will show the game board, messages indicating whether you hit or  
    missed a battleship, and the final state of the game board.
 -  Continue playing until the sunk or game ends.
+
+![invalid input message](documentation/invaild_input_error.jpg)
 
 ## Bugs 
 
