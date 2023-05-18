@@ -52,6 +52,13 @@ Overall, the code allows users to play a basic version of the Battleships game a
 
 ## Future Features
 
+- Player customization: Allow players to choose their own symbols for ships, hits, misses, and the ocean. This customization can add a personal touch to the game.
+
+- Difficulty levels: Implement different difficulty levels, such as easy, medium, and hard. Each level can have varying board sizes, ship widths, and AI strategies, providing a different level of challenge to players.
+
+- Multiplayer mode: Enable a multiplayer mode where two players can compete against each other on separate devices or over a network. This could involve implementing a turn-based system and a way for players to input their guesses.
+
+- Score tracking and leaderboard: Implement a scoring system to track players' performance and maintain a leaderboard. This can add a competitive element to the game and encourage replayability.
 
 ## Data Model
 ## Testing 
