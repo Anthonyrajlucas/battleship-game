@@ -81,12 +81,21 @@ During the game, the board is printed using the print_battleship_board function,
 Overall, the data model primarily revolves around manipulating the elements of the board list to represent the state of the game and track the positions of the battleships and the guesses made by the player and the computer.
 
 ## Testing 
+
+I have manually tested this project by doing the following:
+-  Passed the code through a PEP8 linter and confirmed there are no problems
+-  Given invalid inputs: Out of bounds inputs, same input twice
+-  Tested in my local terminal and the Code Institute Heroku terminal
+-  Follow the prompts to enter the number of rows, columns, number of ships, and ship widths.
+-  Play the game by entering your guesses for row and column coordinates when prompted.
+-  Observe the output, which will show the game board, messages indicating whether you hit or  
+   missed a battleship, and the final state of the game board.
+-  Continue playing until the game ends.
+
+
 ## Bugs 
-### Solved Bugs 
 
-## Remaining Bugs 
-
-- No bugs remaining
+- No bugs found
 
 ## Validator Testing 
 
