@@ -28,10 +28,6 @@
 
 Have fun playing Battleships!
 
-
-
-
-
 ## Features
 -----------------------------------------------------------------------------------------
 ## Existing Features
@@ -90,8 +86,7 @@ I have manually tested this project by doing the following:
 -  Play the game by entering your guesses for row and column coordinates when prompted.
 -  Observe the output, which will show the game board, messages indicating whether you hit or  
    missed a battleship, and the final state of the game board.
--  Continue playing until the game ends.
-
+-  Continue playing until the sunk or game ends.
 
 ## Bugs 
 
