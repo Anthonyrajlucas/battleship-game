@@ -44,7 +44,7 @@ Overall, this code sets up and plays a simplified version of the Battleship game
    marked as sunk on the game board.
 10. If your guess misses, you will be notified, and the corresponding position on the game board 
     will be marked as 'X'.
-![guess misses marked as X](documentation/guess_misses_marked_x.jpg)
+![guess misses marked as x](documentation/guess_misses_marked_x.jpg)
 
 11. The computer will take its turn and follow the same rules.
 12. The game continues until either all the battleships are sunk or the maximum number of turns is 
