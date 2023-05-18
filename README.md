@@ -2,11 +2,18 @@
 
  - Ultimate Battleships is a Python terminal game, which runs in the Code Institute mock terminal on Heroku
 
- - This is a simple implementation of the Battleships game in Python. The game allows you to play against the computer by guessing the locations of battleships on a game board.
+ - The code provided is a simplified version of the Battleship game. Here's a short summary of what the code does:
 
- - The game board will be generated and the battleships will be placed randomly on the board.
+1. It imports the random module for generating random numbers.
+2. It defines several functions:
+   - Creates a game board with dimensions rows x cols and initializes all cells with "O".
+   - Prints the game board.
+   - Randomly places battleships on the board according to the specified ship widths.
+   - Checks if a guess is within the bounds of the game board.
+   - Takes user input for a guess (row and column) and checks if it is a valid guess.
+   - The game loop continues until the game is over.
 
- - The game board is randomly generated and the battleships are placed on the board in random positions.
+Overall, this code sets up and plays a simplified version of the Battleship game where the player and computer take turns guessing coordinates on the game board to sink each other's battleships.
 
  - Here is the live version of my project.
 
@@ -35,6 +42,7 @@
 11. The computer will take its turn and follow the same rules.
 12. The game continues until either all the battleships are sunk or the maximum number of turns is reached.
 13. At the end of the game, the final game board will be displayed along with the game over message.
+![game over](documentation/game_over.jpg)
 
 Have fun playing Battleships!
 
@@ -53,7 +61,8 @@ Have fun playing Battleships!
 - Checking if a guess is on the board: The is_on_board function checks if the user's guess is within the boundaries of the game board.
 ![check user guess is within the boundaries](documentation/is_on_board%20.jpg)
 
-- Getting the user's guess: The get_guess_from_player function prompts the user to enter their guess for the row and column.
+- Getting the user's guess: The get_guess_from_player function prompts the user to enter their  
+  guess for the row and column.
 
 - Playing the game: The code implements the main game loop where the player and the computer take turns guessing the locations of the battleships. The result of each guess is displayed, and the game ends when all ships have been sunk or the maximum number of turns is reached.
 ![game over](documentation/game_over.jpg)
