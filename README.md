@@ -61,6 +61,25 @@ Overall, the code allows users to play a basic version of the Battleships game a
 - Score tracking and leaderboard: Implement a scoring system to track players' performance and maintain a leaderboard. This can add a competitive element to the game and encourage replayability.
 
 ## Data Model
+
+The data model in the provided code is relatively simple and consists of a two-dimensional list representing the game board. Each element in the list represents a cell on the board and can have one of the following values:
+
+"O": Represents an empty cell or the ocean.
+
+"S": Represents a battleship.
+
+"X": Represents a hit or a sunk battleship.
+
+- The board variable is created using the create_battleship_board function, which initializes a two-dimensional list with the specified number of rows and columns, filled with "O" values.
+
+- The battleships are randomly placed on the board using the place_ships_on_the_board function. It iteratively selects random coordinates on the board and checks if there is enough space to place a ship with the specified width. If the location is valid, it updates the cells with "S" values to represent the battleships.
+
+During the game, the board is printed using the print_battleship_board function, which displays the current state of the board.
+
+- The user's guesses and the computer's guesses are recorded by modifying the elements of the board list. If the guess corresponds to a battleship ("S"), it is marked as a hit ("X"). Otherwise, it is marked as a miss ("X").
+
+Overall, the data model primarily revolves around manipulating the elements of the board list to represent the state of the game and track the positions of the battleships and the guesses made by the player and the computer.
+
 ## Testing 
 ## Bugs 
 ### Solved Bugs 
