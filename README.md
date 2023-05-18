@@ -15,7 +15,7 @@
 
 Overall, this code sets up and plays a simplified version of the Battleship game where the player and computer take turns guessing coordinates on the game board to sink each other's battleships.
 
- - Here is the live version of my project. [battleships-game](https://github.com/Anthonyrajlucas/battleship-game)
+ - Here is the live version of my project. [battleships-game](https://anthony-battleships-game.herokuapp.com/)
 
 ## How to Play
 
