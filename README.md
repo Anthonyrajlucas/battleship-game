@@ -51,6 +51,8 @@ Have fun playing Battleships!
 Overall, the code allows users to play a basic version of the Battleships game against the computer.
 
 ## Future Features
+
+
 ## Data Model
 ## Testing 
 ## Bugs 
