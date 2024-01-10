@@ -1,88 +1,89 @@
 import random
 
-# Function to create the game board
-def create_battleship_board(rows, cols):
-    board = []
-    for i in range(rows):
-        board.append(["O"] * cols)
-    return board
+class BattleshipGame:
+    def __init__(self, rows, cols, num_ships):
+        self.rows = rows
+        self.cols = cols
+        self.num_ships = num_ships
+        self.board = [["O"] * cols for _ in range(rows)]
+        self.ship_widths = []
 
-# Function to print the game board
-def print_battleship_board(board):
-    for row in board:
-        print(" ".join(row))
+    def add_ship_widths(self, ship_widths):
+        self.ship_widths = ship_widths
+        self.place_ships()
 
-# Function to randomly place the battleships on the board
-def place_ships_on_the_board(board, num_ships, ship_widths):
-    ships_placed = 0
-    while ships_placed < num_ships:
-        row = random.randint(0, len(board) - 1)
-        col = random.randint(0, len(board[0]) - ship_widths[ships_placed])
-        for i in range(ship_widths[ships_placed]):
-            if board[row][col + i] == "S":
-                break
-        else:
-            for i in range(ship_widths[ships_placed]):
-                board[row][col + i] = "S"
-            ships_placed += 1
+    def place_ships(self):
+        ships_placed = 0
+        while ships_placed < self.num_ships:
+            row = random.randint(0, self.rows - 1)
+            col = random.randint(0, self.cols - self.ship_widths[ships_placed])
+            if all(self.board[row][col + i] != "S" for i in range(self.ship_widths[ships_placed])):
+                for i in range(self.ship_widths[ships_placed]):
+                    self.board[row][col + i] = "S"
+                ships_placed += 1
 
-# Function to check if a guess is on the board
-def is_on_board(guess_row, guess_col, rows, cols):
-    return guess_row >= 0 and guess_row < rows and \
-           guess_col >= 0 and guess_col < cols
+    def print_board(self):
+        for row in self.board:
+            print(" ".join(row))
 
-# Function to get the user's guess
-def get_guess_from_player(rows, cols):
-    while True:
-        guess_row = int(input("Guess Row:\n")) - 1
-        guess_col = int(input("Guess Col:\n")) - 1
-        if is_on_board(guess_row, guess_col, rows, cols):
-            return guess_row, guess_col
-        else:
+    def is_on_board(self, row, col):
+        return 0 <= row < self.rows and 0 <= col < self.cols
+
+    def make_guess(self, row, col):
+        if not self.is_on_board(row, col):
             print("Oops, that's not even in the ocean.")
+            return False
+        elif self.board[row][col] == "S":
+            print("Congratulations! You sank my battleship!")
+            self.board[row][col] = "X"
+            return True
+        elif self.board[row][col] == "X":
+            print("You guessed that one already.")
+            return False
+        else:
+            print("You missed my battleship!")
+            self.board[row][col] = "X"
+            return False
 
-# Set the grid size and ship widths
-rows = int(input("Enter the number of rows:\n"))
-cols = int(input("Enter the number of columns:\n"))
-num_ships = int(input("Enter the number of ships:\n"))
+def get_input(prompt, cast_type=int, condition=lambda x: True):
+    while True:
+        try:
+            value = cast_type(input(prompt))
+            if condition(value):
+                return value
+            else:
+                print("Invalid input, please try again.")
+        except ValueError:
+            print("Invalid input, please enter a valid number.")
 
-ship_widths = []
-for i in range(num_ships):
-    width = int(input("Enter the width for ship {}:\n".format(i + 1)))
-    ship_widths.append(width)
+def main():
+    rows = get_input("Enter the number of rows:\n", condition=lambda x: x > 0)
+    cols = get_input("Enter the number of columns:\n", condition=lambda x: x > 0)
+    num_ships = get_input("Enter the number of ships:\n", condition=lambda x: x > 0 and x <= rows * cols)
 
-# Create the game board and place the battleships
-board = create_battleship_board(rows, cols)
-place_ships_on_the_board(board, num_ships, ship_widths)
+    game = BattleshipGame(rows, cols, num_ships)
 
-# Play the game
-turns = num_ships * 2
-print("Let's play Battleships!")
-for turn in range(turns):
-    print("Turn", turn + 1)
-    print_battleship_board(board)
-    guess_row, guess_col = get_guess_from_player(rows, cols)
+    ship_widths = []
+    for i in range(num_ships):
+        width = get_input(f"Enter the width for ship {i + 1}:\n", condition=lambda x: x > 0 and x <= cols)
+        ship_widths.append(width)
 
-    if board[guess_row][guess_col] == "S":
-        print("Congratulations! You sank my battleship!")
-        board[guess_row][guess_col] = "X"
-    elif board[guess_row][guess_col] == "X":
-        print("You guessed that one already.")
-    else:
-        print("You missed my battleship!")
-        board[guess_row][guess_col] = "X"
+    game.add_ship_widths(ship_widths)
 
-    if turn == turns - 1:
-        print("Game Over")
-        print_battleship_board(board)
-        break
+    turns = num_ships * 2
+    print("Let's play Battleships!")
+    for turn in range(turns):
+        print(f"Turn {turn + 1}")
+        game.print_board()
 
-    computer_row = random.randint(0, rows - 1)
-    computer_col = random.randint(0, cols - 1)
-    if board[computer_row][computer_col] == "S":
-        print("Oh no! The computer sank one of your battleships!")
-        board[computer_row][computer_col] = "X"
-    else:
-        print("Phew! The computer missed your battleship!")
+        guess_row = get_input("Guess Row:\n", condition=lambda x: 1 <= x <= rows) - 1
+        guess_col = get_input("Guess Col:\n", condition=lambda x: 1 <= x <= cols) - 1
+        if game.make_guess(guess_row, guess_col):
+            break
 
-  
+        if turn == turns - 1:
+            print("Game Over")
+            game.print_board()
+
+if __name__ == "__main__":
+    main()
