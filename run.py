@@ -28,30 +28,41 @@ def place_ships_on_the_board(board, num_ships, ship_widths):
 
 # Function to check if a guess is on the board
 def is_on_board(guess_row, guess_col, rows, cols):
-    return guess_row >= 0 and guess_row < rows and \
-           guess_col >= 0 and guess_col < cols
+    return 0 <= guess_row < rows and 0 <= guess_col < cols
 
 # Function to get the user's guess
 def get_guess_from_player(rows, cols):
     while True:
         try:
-            guess_row = int(input("Guess Row:\n")) - 1
-            guess_col = int(input("Guess Col:\n")) - 1
+            guess_row = int(input("Guess Row:\n"))
+            guess_col = int(input("Guess Col:\n"))
             if is_on_board(guess_row, guess_col, rows, cols):
-                return guess_row, guess_col
+                return guess_row - 1, guess_col - 1
             else:
                 print("Oops, that's not even in the ocean. Please enter valid coordinates.")
         except ValueError:
             print("Invalid input. Please enter valid integer coordinates.")
 
 # Set the grid size and ship widths
-rows = int(input("Enter the number of rows:\n"))
-cols = int(input("Enter the number of columns:\n"))
-num_ships = int(input("Enter the number of ships:\n"))
+def get_positive_integer_input(prompt):
+    while True:
+        user_input = input(prompt)
+        if user_input.isdigit():
+            num = int(user_input)
+            if num > 0:
+                return num
+            else:
+                print("Please enter a positive integer.")
+        else:
+            print("Please enter a positive integer.")
+
+rows = get_positive_integer_input("Enter the number of rows:\n")
+cols = get_positive_integer_input("Enter the number of columns:\n")
+num_ships = get_positive_integer_input("Enter the number of ships:\n")
 
 ship_widths = []
 for i in range(num_ships):
-    width = int(input("Enter the width for ship {}:\n".format(i + 1)))
+    width = get_positive_integer_input("Enter the width for ship {}:\n".format(i + 1))
     ship_widths.append(width)
 
 # Create the game board and place the battleships
