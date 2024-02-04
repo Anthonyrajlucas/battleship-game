@@ -67,6 +67,7 @@ def play_battleships(rows, cols, num_ships, ship_widths):
     print("Each turn, you will enter coordinates to guess where the battleships are.")
     print("Let's begin!\n")
     
+    ships_sunk = 0
     for turn in range(turns):
         print(f"Turn {turn + 1}")
         print_battleship_board(board)
@@ -75,24 +76,20 @@ def play_battleships(rows, cols, num_ships, ship_widths):
         if board[guess_row][guess_col] == "S":
             print("Congratulations! You sank my battleship!")
             board[guess_row][guess_col] = "X"
+            ships_sunk += 1
+            if ships_sunk == num_ships:
+                print("Congratulations! You sank all the battleships!")
+                break
         elif board[guess_row][guess_col] == "X":
             print("You guessed that one already.")
         else:
             print("You missed my battleship!")
             board[guess_row][guess_col] = "X"
 
-        if turn == turns - 1:
-            print("Game Over")
-            print_battleship_board(board)
-            break
-
-        computer_row = random.randint(0, rows - 1)
-        computer_col = random.randint(0, cols - 1)
-        if board[computer_row][computer_col] == "S":
-            print("Oh no! The computer sank one of your battleships!")
-            board[computer_row][computer_col] = "X"
-        else:
-            print("Phew! The computer missed your battleship!")
+    if ships_sunk < num_ships:
+        print("Game Over. You ran out of turns.")
+        print("The remaining battleships were at the following positions:")
+        print_battleship_board(board)
 
 def main():
     rows = get_positive_integer_input("Enter the number of rows:\n")
