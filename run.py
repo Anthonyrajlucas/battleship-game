@@ -18,16 +18,17 @@ def place_battleships_on_board(board, num_ships, ship_widths):
     ships_placed = 0
     while ships_placed < num_ships:
         row = random.randint(0, len(board) - 1)
-        col = random.randint(0, len(board[0]) - ship_widths[ships_placed] + 1)
+        col = random.randint(0, len(board[0]) - ship_widths[ships_placed])  # Adjusted col calculation
         ship_fits = True
         for i in range(ship_widths[ships_placed]):
-            if board[row][col + i] == "S":
+            if col + i >= len(board[0]) or board[row][col + i] == "S":
                 ship_fits = False
                 break
         if ship_fits:
             for i in range(ship_widths[ships_placed]):
                 board[row][col + i] = "S"
             ships_placed += 1
+
 
 def is_on_board(guess_row, guess_col, rows, cols):
     return 0 <= guess_row < rows and 0 <= guess_col < cols
