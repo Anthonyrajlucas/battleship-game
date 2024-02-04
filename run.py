@@ -33,17 +33,17 @@ class BattleshipGame:
 
         return [['O' for _ in range(self.cols)] for _ in range(self.rows)]        
 
-    def print_battleship_board(self):
+    def print_battleship_board(self):    
         """
         Print the battleship board with legend.
         """
-        if self.board.size == 0:
+        if not self.board:
             raise ValueError("Board cannot be empty.")
 
         print("  " + " ".join(str(i) for i in range(1, self.cols + 1)))
         print(" +" + "-" * (2 * self.cols - 1) + "+")
         for i in range(self.rows):
-            print(f"{i + 1}| {' '.join(self.board[i, :])} |")
+            print(f"{i + 1}| {' '.join(self.board[i])} |")  # Corrected indexing here
         print(" +" + "-" * (2 * self.cols - 1) + "+")
         print("Legend:")
         print("O : Represents an empty cell or the ocean")
@@ -66,10 +66,10 @@ class BattleshipGame:
                 if col + i >= self.cols or self.board[row][col + i] == "S":
                     ship_fits = False
                     break
-                
+
             if ship_fits:
                 for i in range(self.ship_widths[ships_placed]):
-                    self.board[row, col + i] = "S"
+                    self.board[row][col + i] = "S"
                 ships_placed += 1
 
     def play_game(self):
@@ -96,18 +96,18 @@ class BattleshipGame:
                 guess_col -= 1
 
                 if 0 <= guess_row < self.rows and 0 <= guess_col < self.cols:
-                    if self.board[guess_row, guess_col] == "S":
+                    if self.board[guess_row][guess_col] == "S":  # Corrected indexing here
                         print("Congratulations! You sank my battleship!")
-                        self.board[guess_row, guess_col] = "X"
+                        self.board[guess_row][guess_col] = "X"  # Corrected indexing here
                         ships_sunk += 1
                         if ships_sunk == self.num_ships:
                             print("Congratulations! You sank all the battleships!")
                             break
-                    elif self.board[guess_row, guess_col] == "X":
+                    elif self.board[guess_row][guess_col] == "X":  # Corrected indexing here
                         print("You guessed that one already.")
                     else:
                         print("You missed my battleship!")
-                        self.board[guess_row, guess_col] = "X"
+                        self.board[guess_row][guess_col] = "X"  # Corrected indexing here
                 else:
                     print("Oops, that's not even in the ocean. Please enter valid coordinates.")
 
@@ -158,7 +158,7 @@ def main():
         game.place_battleships_on_board()
         game.play_game()
     except KeyboardInterrupt:
-        print("\n Game aborted by the user.")
+        print("\nGame aborted by the user.")
 
 if __name__ == "__main__":
     main()
