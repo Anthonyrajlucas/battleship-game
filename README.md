@@ -38,8 +38,58 @@
 - [Thank You](#thank-you)
 
 
+## Project Goals
+### User Stories
 
+#### 1. As a Battleships Player (External User):
+- I want to play a logic game where I can challenge myself.
+- I want to be able to set the grid size to adjust the complexity of the game.
+- I want to receive warnings if my guess is off-grid.
 
+### Site Owner Goals
+
+#### 2.Provide a Functional Battleships Game:
+- Offer a fully functional Battleships game where players can play against the computer.
+- Allow players to customize the game grid size and number of ships to enhance gameplay flexibility.
+- Ensure the game operates smoothly and provides clear instructions to the players.
+
+## User Experience
+### Target Audience
+
+- There is no specific audience for the game. 
+- Individuals who enjoy logic-based games and strategic thinking.
+- Players looking for a single-player gaming experience.
+
+### User Requirements and Expectations
+
+1. Customizable Grid Size:
+- Users should be able to set the number of rows and columns for the game grid.
+2. Variable Number of Ships:
+- Users should be able to specify the number of ships they want to play with.
+- Each ship can have a different width, allowing for varied challenges.
+3. Interactive Gameplay:
+- Users expect an interactive gameplay experience where they can input their guesses for ship positions.
+- They expect feedback on the success or failure of their guesses.
+4. Clear Instructions and Error Handling:
+- Users expect clear instructions on how to play the game.
+- They expect the system to handle errors gracefully, such as invalid input or out-of-grid guesses.
+
+### User Manual
+<details><summary>Click here to view instructions</summary>
+
+#### Starting the Game:
+- Users launch the game and are greeted with a welcome message and game information.
+- They set up the game parameters by specifying the grid size and number of ships.
+#### Gameplay:
+- Users take turns guessing the positions of the ships by inputting row and column coordinates.
+- The system provides feedback on whether the guess was successful or not.
+- Users continue guessing until they either sink all the ships or run out of turns.
+#### Ending the Game:
+- The game ends when all ships are sunk or when the user runs out of turns.
+- Users receive appropriate messages indicating the outcome of the game.
+#### Error Handling:
+- Users are guided with error messages if they input invalid parameters or make incorrect guesses.
+- They can abort the game at any time by using keyboard shortcuts.
 
 
 
