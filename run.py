@@ -1,4 +1,3 @@
-import numpy as np
 import random
 
 def get_positive_integer_input(prompt):
@@ -32,7 +31,7 @@ class BattleshipGame:
         if self.rows <= 0 or self.cols <= 0:
             raise ValueError("Number of rows and columns must be positive integers.")
 
-        return np.full((self.rows, self.cols), 'O', dtype=str)
+        return [['O' for _ in range(self.cols)] for _ in range(self.rows)]        
 
     def print_battleship_board(self):
         """
