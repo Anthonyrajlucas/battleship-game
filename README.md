@@ -45,7 +45,7 @@
 
 **[View live website here](https://anthony-battleships-game.herokuapp.com/)**  :computer:
 
-![An image previewing all devices](/)
+![An image previewing all devices](/documentation/preview.jpg)
 
 
 ## Contents
