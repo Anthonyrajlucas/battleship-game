@@ -250,9 +250,74 @@ Users need to specify the grid size and the number of ships before starting the 
     <img src="/documentation/shortcuts.jpg" alt="shortcuts">
 </details>
 
+## Testing
+- Manual testing of user stories
+- Testing on Browsers
+- Tested Devices with Browsers
+- Validator Testing
 
 
 
+### Testing on Browsers
+- I tested that this game works in different browsers - Chrome and Safari and was able to deploy successfully
+
+### Tested Devices with Browsers
+- iPhone 12
+    - Safari
+- Samsung S22 Ultra
+    - Chrome
+- Macbook Pro 2019 16-inch
+    - Chrome
+    - Safari
+
+### Validator Testing
+#### PEP8 Python Validator
+[PEP8 Python Validator](https://pep8ci.herokuapp.com/) was used to validate the code.
+
+This validator was provided by Code Institute.
+
+No errors were found.
+
+### Bugs and Fixes
+
+| **Bugs** | **Fixes** |
+| ------- | ------- |
+| When user login password input was wrong it was not giving an option to go back | Add signup_check function which will prompt again if user exist or not|
+| When user do not exist was prompted during login, user didn'T have option to go back | Add signup_check function which will prompt again if user exist or not |
+
+### Unfixed Bugs
+
+- No unfixed bugs
+
+## Deployment
+
+### Deploying the website in Heroko:
+- The website was deployed to Heroko using following steps:
+#### Login or create an account at Heroku
+- Make an account in Heroko and login
+
+
+### Forking the GitHub Repository
+1. Go to the GitHub repository
+2. Click on Fork button in top right corner
+3. You will then have a copy of the repository in your own GitHub account.
+4. [GitHub Repository]()
+
+### Cloning the repository in GitHub
+1. Visit the GitHub page of the website's repository
+2. Click the “Clone” button on top of the page
+3. Click on “HTTPS”
+4. Click on the copy button next to the link to copy it
+5. Open your IDE
+6. Type ```git clone <copied URL>``` into the terminal
+
+
+## Credits
+
+
+### Thank You
+- to my mentor Mo Shami for supporting me with his feedback through the project
+- to Code Institute and Slack community for helping me when I was getting stuck with some challenges.
 
 
 
