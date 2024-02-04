@@ -1,19 +1,20 @@
 import random
 
-# Function to create the game board
 def create_battleship_board(rows, cols):
     board = []
-    for i in range(rows):
+    for _ in range(rows):
         board.append(["O"] * cols)
     return board
 
-# Function to print the game board
 def print_battleship_board(board):
+    print("Legend:")
+    print("O : Empty space")
+    print("X : Part of ship that was hit")
+    print("S : Empty location hit\n")
     for row in board:
         print(" ".join(row))
 
-# Function to randomly place the battleships on the board
-def place_ships_on_the_board(board, num_ships, ship_widths):
+def place_battleships_on_board(board, num_ships, ship_widths):
     ships_placed = 0
     while ships_placed < num_ships:
         row = random.randint(0, len(board) - 1)
@@ -26,11 +27,9 @@ def place_ships_on_the_board(board, num_ships, ship_widths):
                 board[row][col + i] = "S"
             ships_placed += 1
 
-# Function to check if a guess is on the board
 def is_on_board(guess_row, guess_col, rows, cols):
     return 0 <= guess_row < rows and 0 <= guess_col < cols
 
-# Function to get the user's guess
 def get_guess_from_player(rows, cols):
     while True:
         try:
@@ -43,7 +42,6 @@ def get_guess_from_player(rows, cols):
         except ValueError:
             print("Invalid input. Please enter valid integer coordinates.")
 
-# Function to get a positive integer input
 def get_positive_integer_input(prompt):
     while True:
         user_input = input(prompt)
@@ -56,16 +54,19 @@ def get_positive_integer_input(prompt):
         else:
             print("Please enter a positive integer.")
 
-# Function to play the game
 def play_battleships(rows, cols, num_ships, ship_widths):
     board = create_battleship_board(rows, cols)
-    place_ships_on_the_board(board, num_ships, ship_widths)
-
-    # Play the game
+    place_battleships_on_board(board, num_ships, ship_widths)
     turns = num_ships * 2
-    print("Let's play Battleships!")
+
+    print("Welcome to Battleships!")
+    print("In this game, you need to sink all the battleships to win.")
+    print("You have a limited number of turns to guess the positions of the battleships.")
+    print("Each turn, you will enter coordinates to guess where the battleships are.")
+    print("Let's begin!\n")
+    
     for turn in range(turns):
-        print("Turn", turn + 1)
+        print(f"Turn {turn + 1}")
         print_battleship_board(board)
         guess_row, guess_col = get_guess_from_player(rows, cols)
 
@@ -91,7 +92,6 @@ def play_battleships(rows, cols, num_ships, ship_widths):
         else:
             print("Phew! The computer missed your battleship!")
 
-# Main function
 def main():
     rows = get_positive_integer_input("Enter the number of rows:\n")
     cols = get_positive_integer_input("Enter the number of columns:\n")
@@ -99,11 +99,13 @@ def main():
 
     ship_widths = []
     for i in range(num_ships):
-        width = get_positive_integer_input("Enter the width for ship {}:\n".format(i + 1))
+        width = get_positive_integer_input(f"Enter the width for ship {i + 1}:\n")
+        while width > cols:
+            print(f"Ship width cannot exceed the number of columns ({cols}).")
+            width = get_positive_integer_input(f"Enter the width for ship {i + 1}:\n")
         ship_widths.append(width)
 
     play_battleships(rows, cols, num_ships, ship_widths)
 
 if __name__ == "__main__":
     main()
-
