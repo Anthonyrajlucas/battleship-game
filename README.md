@@ -1,4 +1,51 @@
 
+# Battleships-Game  
+
+**Developer:** Anthony Raj
+
+### The game is Battleships, a classic strategy game where the player's objective is to sink all the battleships hidden on a grid. Here's a breakdown of how the game works:
+
+#### Setup:
+
+- Players set up the game by specifying the number of rows and columns for the game board (maximum 20 each).
+- They also determine the number of battleships to be placed on the board (maximum 5), along with the width of each battleship.
+
+#### Game Information:
+
+- Players are informed about the rules of the game:
+    - They must sink all the battleships to win.
+    - They have a limited number of turns to guess the positions of the battleships.
+    - Each turn, they enter coordinates to guess where the battleships are hidden.
+
+#### Gameplay:
+
+- The game board is displayed, showing the ocean grid with coordinates.
+- Players input coordinates to guess where the battleships are located.
+- If a guess hits a battleship, it's marked as "X" on the grid.
+- If a guess misses, it's marked as a "miss" on the grid.
+- Players continue guessing until they either sink all the battleships or run out of turns.
+
+#### Outcome:
+
+- If the player sinks all the battleships within the allotted turns, they win.
+- If they run out of turns before sinking all the battleships, they lose.
+
+#### Legend:
+
+- The legend explains the symbols used on the game board:
+    - "O": Represents an empty cell or the ocean.
+    - "X": Represents a hit or a sunk battleship.
+    - "S": Represents a battleship.
+
+#### Game Abortion:
+
+- Players can abort the game at any time by using the keyboard interrupt (Ctrl + C).
+
+**Overall, Battleships is a strategic guessing game that challenges players to use logic and deduction to locate and sink hidden battleships on the game board.**
+
+**[View live website here](https://anthony-battleships-game.herokuapp.com/)**  :computer:
+
+![An image previewing all devices](/)
 
 
 ## Contents
@@ -90,6 +137,8 @@
 #### Error Handling:
 - Users are guided with error messages if they input invalid parameters or make incorrect guesses.
 - They can abort the game at any time by using keyboard shortcuts.
+
+</details>
 
 
 
