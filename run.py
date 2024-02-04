@@ -47,9 +47,9 @@ class BattleshipGame:
             print(f"{i + 1}| {' '.join(self.board[i, :])} |")
         print(" +" + "-" * (2 * self.cols - 1) + "+")
         print("Legend:")
-        print("O : Empty space")
-        print("X : Part of ship that was hit")
-        print("S : Empty location hit\n")
+        print("O : Represents an empty cell or the ocean")
+        print("X : Represents a hit or a sunk battleship")
+        print("S : Represents a battleship\n")
 
     def place_battleships_on_board(self):
         """
