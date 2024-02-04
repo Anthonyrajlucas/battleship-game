@@ -63,9 +63,10 @@ class BattleshipGame:
             col = random.randint(0, self.cols - self.ship_widths[ships_placed])  # Adjusted col calculation
             ship_fits = True
             for i in range(self.ship_widths[ships_placed]):
-                if col + i >= self.cols or self.board[row, col + i] == "S":
+                if col + i >= self.cols or self.board[row][col + i] == "S":
                     ship_fits = False
                     break
+                
             if ship_fits:
                 for i in range(self.ship_widths[ships_placed]):
                     self.board[row, col + i] = "S"
