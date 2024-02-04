@@ -65,7 +65,6 @@
     - [Language used](#language-used)
     -[Python Libraries used](#python-libraries-used)
     - [Other websites/tools used](#other-websitestools-used)
-    - [3rd Party Python Libraries used](#3rd-party-python-libraries-used)
 - [Features](#features)
     - [Existing Features](#existing-features)
     - [Features to be implemented](#features-to-be-implemented)
@@ -140,6 +139,22 @@
 
 </details>
 
+## Technology Used
+### Language Used
+
+  - Python
+
+### Python Libraries used
+
+
+- random - used to choose random words
+
+
+### Other websites/tools used
+
+- [GitHub](https://github.com/) was used for saving and storing files.
+- [GitPod](https://www.gitpod.io/) was the IDE used for writing code.
+- [Heroku](https://www.heroku.com/) was used as the deploying platform for this site.
 
 
 
