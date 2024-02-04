@@ -156,8 +156,99 @@
 - [GitPod](https://www.gitpod.io/) was the IDE used for writing code.
 - [Heroku](https://www.heroku.com/) was used as the deploying platform for this site.
 
+## Features
 
+### Setup
 
+1. Launching the Game:
+
+- Upon launching the game, users will be greeted with a welcome message and game information.
+
+<details>
+    <summary>Launching The Game screenshot</summary>
+    <img src="" alt="Welcome Message">
+</details>
+
+2. Setting up Parameters:
+
+Users need to specify the grid size and the number of ships before starting the game
+
+<details>
+    <summary>Setting up Parameters</summary>
+    <img src="" alt="Grid size and No of Ship">
+</details>
+
+### GamePlay 
+
+1. Taking Turns:
+
+- Users take turns guessing the positions of the ships by inputting row and column coordinates.
+
+<details>
+    <summary>Taking Turns</summary>
+    <img src="" alt="position of ship">
+</details>
+
+2. Feedback:
+
+- The system provides feedback on whether the guess was successful or not.
+
+<details>
+    <summary>Feedback</summary>
+    <img src="" alt="feedback">
+</details>
+
+3. Continuing the Game:
+
+- Users continue guessing until they either sink all the ships or run out of turns.
+
+<details>
+    <summary>Continuing the Game</summary>
+    <img src="" alt="Game Turn">
+</details>
+
+### Ending the Game
+1 .Game Conclusion:
+
+- The game ends when all ships are sunk or when the user runs out of turns.
+
+<details>
+    <summary>Game Conclusion</summary>
+    <img src="" alt="conclusion">
+</details>
+
+### Outcome Messages:
+
+- Users receive appropriate messages indicating the outcome of the game.
+
+<details>
+    <summary>Outcome Messages</summary>
+    <img src="" alt="user message">
+</details>
+
+### Error Handling
+1. Guidance for Users:
+
+- Users are guided with error messages if they input invalid parameters or make incorrect guesses.
+
+<details>
+    <summary>invalid input</summary>
+    <img src="" alt="invalid input">
+</details>
+
+<details>
+    <summary>incorrect guesses</summary>
+    <img src="" alt="incorrect guesses">
+</details>
+
+2. Aborting the Game:
+
+- Users can abort the game at any time by using keyboard shortcuts.
+
+<details>
+    <summary>Aborting the Game</summary>
+    <img src="" alt="shortcuts">
+</details>
 
 
 
