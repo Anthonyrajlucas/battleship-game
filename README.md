@@ -166,7 +166,7 @@
 
 <details>
     <summary>Launching The Game screenshot</summary>
-    <img src="" alt="Welcome Message">
+    <img src="/documentation/welcome_message.jpg" alt="Welcome Message">
 </details>
 
 2. Setting up Parameters:
@@ -175,7 +175,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
 <details>
     <summary>Setting up Parameters</summary>
-    <img src="" alt="Grid size and No of Ship">
+    <img src="/documentation/grid_no_ship.jpg" alt="Grid size and No of Ship">
 </details>
 
 ### GamePlay 
@@ -186,7 +186,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
 <details>
     <summary>Taking Turns</summary>
-    <img src="" alt="position of ship">
+    <img src="/documentation/position_ship.jpg" alt="position of ship">
 </details>
 
 2. Feedback:
@@ -195,7 +195,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
 <details>
     <summary>Feedback</summary>
-    <img src="" alt="feedback">
+    <img src="/documentation/feedback.jpg" alt="feedback">
 </details>
 
 3. Continuing the Game:
@@ -204,7 +204,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
 <details>
     <summary>Continuing the Game</summary>
-    <img src="" alt="Game Turn">
+    <img src="/documentation/game_turn.jpg" alt="Game Turn">
 </details>
 
 ### Ending the Game
@@ -214,7 +214,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
 <details>
     <summary>Game Conclusion</summary>
-    <img src="" alt="conclusion">
+    <img src="/documentation/conclusion.jpg" alt="conclusion">
 </details>
 
 ### Outcome Messages:
@@ -223,7 +223,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
 <details>
     <summary>Outcome Messages</summary>
-    <img src="" alt="user message">
+    <img src="/documentation/user_message.jpg" alt="user message">
 </details>
 
 ### Error Handling
@@ -233,12 +233,12 @@ Users need to specify the grid size and the number of ships before starting the 
 
 <details>
     <summary>invalid input</summary>
-    <img src="" alt="invalid input">
+    <img src="/documentation/invalid_input.jpg" alt="invalid input">
 </details>
 
 <details>
     <summary>incorrect guesses</summary>
-    <img src="" alt="incorrect guesses">
+    <img src="/documentation/incorrect_guesses.jpg" alt="incorrect guesses">
 </details>
 
 2. Aborting the Game:
@@ -247,7 +247,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
 <details>
     <summary>Aborting the Game</summary>
-    <img src="" alt="shortcuts">
+    <img src="/documentation/shortcuts.jpg" alt="shortcuts">
 </details>
 
 
