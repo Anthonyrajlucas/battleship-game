@@ -260,21 +260,21 @@ Users need to specify the grid size and the number of ships before starting the 
 
     <details>
     <summary>specified ranges</summary>
-    <img src="" alt="specified ranges">
+    <img src="/documentation/specified_ranges.jpg" alt="specified ranges">
     </details>
 
     - Check if the board is created and displayed properly.
 
     <details>
     <summary>board display</summary>
-    <img src="" alt="board display">
+    <img src="/documentation/board_display.jpg" alt="board display">
     </details>
 
     - Verify if the game ends correctly when all ships are sunk or when the turns run out.
 
     <details>
     <summary>verify game end</summary>
-    <img src="" alt="verify game end">
+    <img src="/documentation/verify_game_end.jpg" alt="verify game end">
     </details>
 
 
@@ -282,7 +282,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
     <details>
     <summary>game interrupt</summary>
-    <img src="" alt="game interrupt">
+    <img src="/documentation/game_intruppt.jpg" alt="game interrupt">
     </details>
 
 2. **Negative Testing:**
@@ -290,7 +290,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
     <details>
     <summary>invalid values</summary>
-    <img src="" alt="invalid values">
+    <img src="/documentation/invalid_values.jpg" alt="invalid values">
     </details>
 
 
@@ -298,7 +298,7 @@ Users need to specify the grid size and the number of ships before starting the 
 
     <details>
     <summary>error message</summary>
-    <img src="" alt="error message">
+    <img src="/documentation/error_message.jpg" alt="error message">
     </details>
     
 
