@@ -140,9 +140,7 @@
 
 ### Python Libraries used
 
-
 - random - used to choose random words
-
 
 ### Other websites/tools used
 
@@ -364,7 +362,7 @@ No errors were found.
 1. Go to the GitHub repository
 2. Click on Fork button in top right corner
 3. You will then have a copy of the repository in your own GitHub account.
-4. [GitHub Repository]()
+4. [GitHub Repository](https://github.com/Anthonyrajlucas/battleship-game)
 
 ### Cloning the repository in GitHub
 1. Visit the GitHub page of the website's repository
