@@ -1,6 +1,7 @@
 import random
 
-def get_positive_integer_input(prompt):
+
+def get_pos_int_input(prompt):
     """
     Get positive integer input from the user.
     """
@@ -13,7 +14,9 @@ def get_positive_integer_input(prompt):
             else:
                 print("Please enter a positive integer.")
         except ValueError:
-            print("Invalid input. Please enter valid integer coordinates.")
+            print("Invalid input. "
+                  "Please enter valid integer coordinates.")
+
 
 class BattleshipGame:
     def __init__(self, rows, cols, num_ships, ship_widths, input_function):
@@ -29,11 +32,12 @@ class BattleshipGame:
         Create an empty battleship board with specified dimensions.
         """
         if self.rows <= 0 or self.cols <= 0:
-            raise ValueError("Number of rows and columns must be positive integers.")
+            raise ValueError("Number of "
+                             "rows and columns must be positive integers.")
 
-        return [['O' for _ in range(self.cols)] for _ in range(self.rows)]        
+        return [['O' for _ in range(self.cols)] for _ in range(self.rows)]
 
-    def print_battleship_board(self):    
+    def print_battleship_board(self):
         """
         Print the battleship board with legend.
         """
@@ -43,7 +47,7 @@ class BattleshipGame:
         print("  " + " ".join(str(i) for i in range(1, self.cols + 1)))
         print(" +" + "-" * (2 * self.cols - 1) + "+")
         for i in range(self.rows):
-            print(f"{i + 1}| {' '.join(self.board[i])} |")  # Corrected indexing here
+            print(f"{i + 1}| {' '.join(self.board[i])} |")
         print(" +" + "-" * (2 * self.cols - 1) + "+")
         print("Legend:")
         print("O : Represents an empty cell or the ocean")
@@ -60,7 +64,7 @@ class BattleshipGame:
         ships_placed = 0
         while ships_placed < self.num_ships:
             row = random.randint(0, self.rows - 1)
-            col = random.randint(0, self.cols - self.ship_widths[ships_placed])  # Adjusted col calculation
+            col = random.randint(0, self.cols - self.ship_widths[ships_placed])
             ship_fits = True
             for i in range(self.ship_widths[ships_placed]):
                 if col + i >= self.cols or self.board[row][col + i] == "S":
@@ -81,9 +85,12 @@ class BattleshipGame:
 
             print("Welcome to Battleships!")
             print("Game Information:")
-            print("- In this game, you need to sink all the battleships to win.")
-            print("- You have a limited number of turns to guess the positions of the battleships.")
-            print("- Each turn, you will enter coordinates to guess where the battleships are.")
+            print("- In this game, "
+                  "you need to sink all the battleships to win.")
+            print("- You have a limited "
+                  "number of turns to guess the positions of the battleships.")
+            print("- Each turn, you "
+                  "will enter coordinates to guess where the battleships are.")
             print("Let's begin!\n")
 
             ships_sunk = 0
@@ -96,27 +103,31 @@ class BattleshipGame:
                 guess_col -= 1
 
                 if 0 <= guess_row < self.rows and 0 <= guess_col < self.cols:
-                    if self.board[guess_row][guess_col] == "S":  # Corrected indexing here
+                    if self.board[guess_row][guess_col] == "S":
                         print("Congratulations! You sank my battleship!")
-                        self.board[guess_row][guess_col] = "X"  # Corrected indexing here
+                        self.board[guess_row][guess_col] = "X"
                         ships_sunk += 1
                         if ships_sunk == self.num_ships:
-                            print("Congratulations! You sank all the battleships!")
+                            print("Congratulations! "
+                                  "You sank all the battleships!")
                             break
-                    elif self.board[guess_row][guess_col] == "X":  # Corrected indexing here
+                    elif self.board[guess_row][guess_col] == "X":
                         print("You guessed that one already.")
                     else:
                         print("You missed my battleship!")
-                        self.board[guess_row][guess_col] = "X"  # Corrected indexing here
+                        self.board[guess_row][guess_col] = "X"
                 else:
-                    print("Oops, that's not even in the ocean. Please enter valid coordinates.")
+                    print("Oops, that's not even "
+                          "in the ocean. Please enter valid coordinates.")
 
             if ships_sunk < self.num_ships:
                 print("Game Over. You ran out of turns.")
-                print("The remaining battleships were at the following positions:")
+                print("The remaining battleships "
+                      "were at the following positions:")
                 self.print_battleship_board()
         except ValueError as ve:
             print(f"Error: {ve}")
+
 
 def main():
     """
@@ -126,39 +137,54 @@ def main():
         print("Welcome to Battleships!")
         print("Game Information:")
         print("- In this game, you need to sink all the battleships to win.")
-        print("- You have a limited number of turns to guess the positions of the battleships.")
-        print("- Each turn, you will enter coordinates to guess where the battleships are.")
+        print("- You have a limited number of turns to guess"
+              " the positions of the battleships.")
+        print("- Each turn, you will enter coordinates to"
+              " guess where the battleships are.")
         print("Let's set up the game parameters.\n")
 
         # Proceed with the game setup
-        rows = get_positive_integer_input("Enter the number of rows (maximum 20):\n")
+        rows = get_pos_int_input("Enter the number "
+                                 "of rows (maximum 20):\n")
         while rows > 20:
             print("Error: The number of rows cannot exceed 20.")
-            rows = get_positive_integer_input("Please enter the number of rows (maximum 20):\n")
+            rows = get_pos_int_input("Please enter "
+                                     "the number "
+                                     "of rows (maximum 20):\n")
 
-        cols = get_positive_integer_input("Enter the number of columns (maximum 20):\n")
+        cols = get_pos_int_input("Enter the "
+                                 "number of columns (maximum 20):\n")
         while cols > 20:
             print("Error: The number of columns cannot exceed 20.")
-            cols = get_positive_integer_input("Please enter the number of columns (maximum 20):\n")
+            cols = get_pos_int_input("Please enter the "
+                                     "number "
+                                     "of columns (maximum 20):\n")
 
-        num_ships = get_positive_integer_input("Enter the number of ships (maximum 5):\n")
+        num_ships = get_pos_int_input("Enter the "
+                                      "number " 
+                                      "of ships (maximum 5):\n")
         while num_ships > 5:
             print("Error: The number of ships cannot exceed 5.")
-            num_ships = get_positive_integer_input("Please enter the number of ships (maximum 5):\n")
+            num_ships = get_pos_int_input("Please enter "
+                                          "the number "
+                                          "of ships (maximum 5):\n")
 
         ship_widths = []
         for i in range(num_ships):
-            width = get_positive_integer_input(f"Enter the width for ship {i + 1}:\n")
+            width = get_pos_int_input(f"Enter the width for ship {i + 1}:\n")
             while width > cols:
                 print(f"Ship width cannot exceed the number of columns ({cols}).")
-                width = get_positive_integer_input(f"Enter the width for ship {i + 1}:\n")
+                width = get_pos_int_input(f"Enter the width for ship {i + 1}:\n")
             ship_widths.append(width)
 
-        game = BattleshipGame(rows, cols, num_ships, ship_widths, get_positive_integer_input)
+        game = BattleshipGame(rows, cols, num_ships,
+                              ship_widths,
+                              get_pos_int_input)
         game.place_battleships_on_board()
         game.play_game()
     except KeyboardInterrupt:
         print("\nGame aborted by the user.")
+
 
 if __name__ == "__main__":
     main()

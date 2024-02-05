@@ -56,9 +56,6 @@
     - [Target Audience](#target-audience)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
     - [User Manual](#user-manual)
-- [User Stories](#user-stories)
-    - [Users](#users)
-    - [Site Owner](#site-owner)
 - [Teachnical Design](#technical-design)
     - [Flowchart](#flowchart)
 - [Technology Used](#technology-used)
@@ -251,12 +248,59 @@ Users need to specify the grid size and the number of ships before starting the 
 </details>
 
 ## Testing
-- Manual testing of user stories
+- Manual testing
 - Testing on Browsers
 - Tested Devices with Browsers
 - Validator Testing
 
+### Manual Testing
 
+1. **Positive Testing:**
+    - Input valid values within the specified ranges.
+
+    <details>
+    <summary>specified ranges</summary>
+    <img src="" alt="specified ranges">
+    </details>
+
+    - Check if the board is created and displayed properly.
+
+    <details>
+    <summary>board display</summary>
+    <img src="" alt="board display">
+    </details>
+
+    - Verify if the game ends correctly when all ships are sunk or when the turns run out.
+
+    <details>
+    <summary>verify game end</summary>
+    <img src="" alt="verify game end">
+    </details>
+
+
+    - Try interrupting the game with keyboard interrupts (Ctrl+C) to ensure it exits gracefully.
+
+    <details>
+    <summary>game interrupt</summary>
+    <img src="" alt="game interrupt">
+    </details>
+
+2. **Negative Testing:**
+    - Input invalid values (e.g., negative integers, non-numeric characters) for rows, columns, ships, and ship widths.
+
+    <details>
+    <summary>invalid values</summary>
+    <img src="" alt="invalid values">
+    </details>
+
+
+    - Ensure appropriate error messages are displayed when invalid input is provided.
+
+    <details>
+    <summary>error message</summary>
+    <img src="" alt="error message">
+    </details>
+    
 
 ### Testing on Browsers
 - I tested that this game works in different browsers - Chrome and Safari and was able to deploy successfully
