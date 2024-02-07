@@ -132,6 +132,17 @@
 - They can abort the game at any time by using keyboard shortcuts.
 
 </details>
+## Technical Design
+
+## FlowChart
+
+- [Lucidchart](https://www.lucidchart.com) was used to build flowchart
+
+<details>
+    <summary>Flowchart</summary>
+    <p>Battleship Game Flowchart</p>
+    <img src="/documentation/flow_chart.jpg" alt="Flow chart">
+</details>
 
 ## Technology Used
 ### Language Used
