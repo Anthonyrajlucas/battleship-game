@@ -56,6 +56,8 @@
     - [Target Audience](#target-audience)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
     - [User Manual](#user-manual)
+- [Teachnical Design](#technical-design)
+    - [Flowchart](#flowchart)
 - [Technology Used](#technology-used)
     - [Language used](#language-used)
     -[Python Libraries used](#python-libraries-used)
